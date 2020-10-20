@@ -2,17 +2,17 @@ import streamlit as st
 import pandas as pd
 import random
 
-st.write("""
-# Simple cosa Price App
-Shown are the stock **closing price** and ***volume*** of Google!
+n = 1000
+
+st.write(f"""
+# Law of Large Number Example
+Shown are the average of {n} random dice rolls!
 """)
 
-# https://towardsdatascience.com/how-to-get-stock-data-using-python-c0de1df17e75
-#define the ticker symbol
-#get data on this ticker
-randomlist = [random.choice(range(1, 7)) for x in range(1000)]
+
+randomlist = [random.choice(range(1, 7)) for x in range(n)]
 c=[]
-for i in range(1000):
+for i in range(n):
     c.append(sum(randomlist[:i+1])/(i+1))
 #get the historical prices for this ticker
 # Open	High	Low	Close	Volume	Dividends	Stock Splits
