@@ -2,14 +2,13 @@ import streamlit as st
 import pandas as pd
 import random
 
-n = 1000
+
+n = st.sidebar.slider("random dice rolls", min_value=0, max_value=250, value=100)
 
 st.write(f"""
 # Law of Large Number Example
 Shown are the average of {n} random dice rolls!
 """)
-
-n = st.sidebar.slider("random dice rolls", min_value=0, max_value=250, value=100)
 
 randomlist = [random.choice(range(1, 7)) for x in range(n)]
 c=[]
